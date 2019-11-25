@@ -1,0 +1,81 @@
+html{
+  background-color: black;
+}
+::placeholder{
+  color:white;
+}
+
+.top{
+    display: inline;
+  position: absolute;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  width: 90%;
+  border-radius: 180px;
+  height: 7.5%;
+  background-color: #5f27cd;
+}
+.searchText{
+    color: white;
+  display:block;
+  margin-top: 1%;
+  margin-left: 5%;
+  width: 80%;
+  height:80%;
+  border:none;
+  border-bottom: 5px solid white;
+  background-color: inherit;
+  font-size: 72px;
+  vertical-align: middle;
+}
+.btn{
+    position: absolute;
+    top:25%;
+    margin-left: 86%;
+    background-color: inherit;
+}
+#btn2{
+    background-color: inherit;
+    border:none;
+}
+.fa-search{
+  color:white;
+  font-size: 72px;
+}
+
+.bottom{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7.5%;
+  background-color: #5f27cd;
+
+}
+#fav{
+    position: absolute;
+    left: 20%;
+    background-color: inherit;
+    border:none;
+    height:100%;
+}
+#other2{
+    position: absolute;
+    right:20%;
+    background-color: inherit;
+    border:none;
+    height:100%;
+}
+#other1{
+    position: absolute;
+    left:44%;
+    background-color: inherit;
+    border:none;
+    height:100%;
+}
+
+.fa-star{
+    color:white;
+    font-size:95px;
+}
