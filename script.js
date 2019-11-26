@@ -8,11 +8,20 @@ function doubleCut(list){
     })
     return l;
 }
+
+function addFav(arg){
+    favoris.push(arg)
+    localStorage.setItem("favoris",favoris)
+}
+
+
 // just a commit test
+// localStorage
 //##################################################################################
 const token = "14df45e6-40b1-4d94-bce2-0535fcdb1c42"
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const url = "https://api.cts-strasbourg.eu/v1/siri/2.0/stoppoints-discovery"
+let favoris = ["174"]
 
 let headers = new Headers()
 headers.append('Content-Type', 'application/json');
@@ -42,7 +51,22 @@ let getStopNames = async function(){
         })
     })
 }
+
+let StopMonitor = async function(arg){
+    let data = await fetch(proxyurl + "https://api.cts-strasbourg.eu/v1/siri/2.0/stop-monitoring?MonitoringRef="+arg+"&MonitoringRef=" ,cts)
+    .then(response=>response.json())
+    .then(json=>json.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit)
+    .then(function(array){
+      array.forEach(function(element){
+        let data = element.MonitoredVehicleJourney
+        console.log(data.LineRef+" - "+data.DestinationName+": "+data.MonitoredCall.ExpectedArrivalTime)
+      })
+    })
+}
+
+
 getStopNames()
+StopMonitor("174")
 
 let home = document.getElementById('favBut')
 let homeBut = document.getElementById('fav')
