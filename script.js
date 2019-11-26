@@ -50,24 +50,16 @@ let other1But = document.getElementById('other1But')
 let other2 = document.getElementById('other2')
 let other2But = document.getElementById('other2But')
 const buttons = [home,other1,other2]
+const favInner ="<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"fas fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"other1\" onclick=\"other1F()\"><i class=\"far fa-star\" id=\"other1But\"></i></button><button type=\"button\" id=\"other2\" onclick=\"other2F()\"><i class=\"far fa-star\" id=\"other2But\"></i></button>"
+const other1Inner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"other1\" onclick=\"other1F()\"><i class=\"fas fa-star\" id=\"other1But\"></i></button><button type=\"button\" id=\"other2\" onclick=\"other2F()\"><i class=\"far fa-star\" id=\"other2But\"></i></button>"
+const other2Inner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"other1\" onclick=\"other1F()\"><i class=\"far fa-star\" id=\"other1But\"></i></button><button type=\"button\" id=\"other2\" onclick=\"other2F()\"><i class=\"fas fa-star\" id=\"other2But\"></i>"
 
 function homeF(){
-    console.log("homeF pressed")
-    homeBut.className = "fas fa-star"
-    other1.className = "far fa-star"
-    other2.className = "far fa-star"
-    console.log(document.getElementById("bottom").innerHTML)
+    document.getElementById("bottom").innerHTML = favInner
 }
 function other1F(){
-    console.log("other1F pressed")
-    homeBut.className = "far fa-star"
-    other1.className = "fas fa-star"
-    other2.className = "far fa-star"
-    console.log(document.getElementById("bottom").innerHTML)
+  document.getElementById("bottom").innerHTML = other1Inner
 }
 function other2F(){
-    console.log("other2F pressed")
-    homeBut.className = "far fa-star"
-    other1.className = "far fa-star"
-    other2.className = "fas fa-star"
+  document.getElementById("bottom").innerHTML = other2Inner
 }
