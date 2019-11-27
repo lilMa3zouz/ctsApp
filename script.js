@@ -14,11 +14,7 @@ function addFav(arg){
     localStorage.setItem("favoris",favoris)
 }
 
-function quot(divisé,diviseur){
-  while(divisé>=diviseur){
 
-  }
-}
 // just a commit test
 // localStorage
 //##################################################################################
@@ -60,30 +56,13 @@ let StopMonitor = async function(arg){
     var d = new Date();
     let actualTime = new Date()
     let actualSecond = actualTime.getHours()*3600 + actualTime.getMinutes()*60
-
     let data = await fetch(proxyurl + "https://api.cts-strasbourg.eu/v1/siri/2.0/stop-monitoring?MonitoringRef="+arg+"&MonitoringRef=" ,cts)
-    .then(response=>response.json())
-    .then(json=>json.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit)
-    .then(function(array){
-      array.forEach(function(element){
-        let data = element.MonitoredVehicleJourney
-        let ExpectedArrivalTime = data.MonitoredCall.ExpectedArrivalTime.split("T")[1].split("+")[0].split(":")
-        let hours = ExpectedArrivalTime[0]
-        hours = Number(hours)
-        let minutes = ExpectedArrivalTime[1]
-        minutes = Number(minutes)
-        let seconds = hours*3600+minutes*60
-        let secondDif = seconds - actualSecond
-        minutesRemaining = secondDif
-        ExpectedArrivalTime = ExpectedArrivalTime[0]+":"+ExpectedArrivalTime[1]
-        //console.log(data.LineRef+" - "+data.DestinationName+": "+ExpectedArrivalTime)
-      })
-    })
+    return data
 }
 
 
 getStopNames()
-StopMonitor("174")
+StopMonitor("174").then(response=>response.text()).then(text=>console.log(text))
 
 let home = document.getElementById('favBut')
 let homeBut = document.getElementById('fav')
@@ -105,3 +84,28 @@ function other1F(){
 function other2F(){
   document.getElementById("bottom").innerHTML = other2Inner
 }
+
+
+
+
+
+
+/*.then(response=>response.json())
+.then(json=>json.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit)
+.then(function(array){
+  let list = []
+  array.forEach(function(element){
+    let data = element.MonitoredVehicleJourney
+    let ExpectedArrivalTime = data.MonitoredCall.ExpectedArrivalTime.split("T")[1].split("+")[0].split(":")
+    let hours = ExpectedArrivalTime[0]
+    hours = Number(hours)
+    let minutes = ExpectedArrivalTime[1]
+    minutes = Number(minutes)
+    let seconds = hours*3600+minutes*60
+    let secondDif = seconds - actualSecond
+    minutesRemaining = String(Math.trunc(secondDif/60))+"'";
+    ExpectedArrivalTime = ExpectedArrivalTime[0]+":"+ExpectedArrivalTime[1]
+    list.push(data.LineRef+" - "+data.DestinationName+": "+ExpectedArrivalTime + " - " + minutesRemaining)
+  })
+  return list
+})*/
