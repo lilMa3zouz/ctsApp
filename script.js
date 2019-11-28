@@ -21,7 +21,6 @@ function addFav(arg){
 const token = "14df45e6-40b1-4d94-bce2-0535fcdb1c42"
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const url = "https://api.cts-strasbourg.eu/v1/siri/2.0/stoppoints-discovery"
-let favoris = ["174"]
 
 let headers = new Headers()
 headers.append('Content-Type', 'application/json');
@@ -84,28 +83,36 @@ let StopMonitor = async function(arg){
   return data
 }
 getStopNames()
-StopMonitor("174").then(response=>console.log(response))
 
 
 let home = document.getElementById('favBut')
 let homeBut = document.getElementById('fav')
-let other1 = document.getElementById('other1')
-let other1But = document.getElementById('other1But')
-let other2 = document.getElementById('other2')
-let other2But = document.getElementById('other2But')
-const buttons = [home,other1,other2]
-const favInner ="<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"fas fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"other1\" onclick=\"other1F()\"><i class=\"far fa-star\" id=\"other1But\"></i></button><button type=\"button\" id=\"other2\" onclick=\"other2F()\"><i class=\"far fa-star\" id=\"other2But\"></i></button>"
-const other1Inner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"other1\" onclick=\"other1F()\"><i class=\"fas fa-star\" id=\"other1But\"></i></button><button type=\"button\" id=\"other2\" onclick=\"other2F()\"><i class=\"far fa-star\" id=\"other2But\"></i></button>"
-const other2Inner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"other1\" onclick=\"other1F()\"><i class=\"far fa-star\" id=\"other1But\"></i></button><button type=\"button\" id=\"other2\" onclick=\"other2F()\"><i class=\"fas fa-star\" id=\"other2But\"></i>"
+let clock = document.getElementById('clock')
+let clockBut = document.getElementById('clockBut')
+let path = document.getElementById('path')
+let pathBut = document.getElementById('pathBut')
+const buttons = [home,clock,path]
+const favInner ="<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"fas fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"clock\" onclick=\"clockF()\"><i class=\"far fa-clock\" id=\"clockBut\"></i></button><button type=\"button\" id=\"path\" onclick=\"pathF()\"><i class=\"farfa-code-commit\" id=\"pathBut\"></i></button>"
+const clockInner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"clock\" onclick=\"clockF()\"><i class=\"fas fa-clock\" id=\"clockBut\"></i></button><button type=\"button\" id=\"path\" onclick=\"pathF()\"><i class=\"far fa-code-commit\" id=\"pathBut\"></i></button>"
+const pathInner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"clock\" onclick=\"clockF()\"><i class=\"far fa-clock\" id=\"clockBut\"></i></button><button type=\"button\" id=\"path\" onclick=\"pathF()\"><i class=\"fas fa-code-commit\" id=\"pathBut\"></i>"
 
 function homeF(){
     document.getElementById("bottom").innerHTML = favInner
+    document.getElementById("favPage").style.display = "block"
+    document.getElementById("clockPage").style.display = "none"
+    document.getElementById("pathPage").style.display = "none"
 }
-function other1F(){
-  document.getElementById("bottom").innerHTML = other1Inner
+function clockF(){
+  document.getElementById("bottom").innerHTML = clockInner
+  document.getElementById("favPage").style.display = "none"
+  document.getElementById("clockPage").style.display = "block"
+  document.getElementById("pathPage").style.display = "none"
 }
-function other2F(){
-  document.getElementById("bottom").innerHTML = other2Inner
+function pathF(){
+  document.getElementById("bottom").innerHTML = pathInner
+  document.getElementById("favPage").style.display = "none"
+  document.getElementById("clockPage").style.display = "none"
+  document.getElementById("pathPage").style.display = "block"
 }
 
 

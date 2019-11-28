@@ -67,7 +67,7 @@ html{
     border:none;
     height:100%;
 }
-#other1{
+#clock{
     position: absolute;
     left:44%;
     background-color: inherit;
@@ -78,4 +78,36 @@ html{
 .fa-star{
     color:white;
     font-size:95px;
+}
+.fa-clock{
+    color:white;
+    font-size:95px;
+}
+.fa-code-commit{
+    color:white;
+    font-size:95px;
+}
+#clockPage{
+    display:none;
+    position:absolute;
+    top: 7.5%;
+    color: white;
+    font-size: 52px;
+    bottom:7.5%;
+}
+#favPage{
+    display:block;
+    position:absolute;
+    top: 7.5%;
+    color: white;
+    font-size: 52px;
+    bottom:7.5%;
+}
+#other2Page{
+    display: none;
+    position:absolute;
+    top: 7.5%;
+    color: white;
+    font-size: 52px;
+    bottom:7.5%;
 }
