@@ -92,9 +92,9 @@ let clockBut = document.getElementById('clockBut')
 let path = document.getElementById('path')
 let pathBut = document.getElementById('pathBut')
 const buttons = [home,clock,path]
-const favInner ="<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"fas fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"clock\" onclick=\"clockF()\"><i class=\"far fa-clock\" id=\"clockBut\"></i></button><button type=\"button\" id=\"path\" onclick=\"pathF()\"><i class=\"farfa-code-commit\" id=\"pathBut\"></i></button>"
+const favInner ="<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"fas fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"clock\" onclick=\"clockF()\"><i class=\"far fa-clock\" id=\"clockBut\"></i></button><button type=\"button\" id=\"path\" onclick=\"pathF()\"><i class=\"far fa-code-commit\" id=\"pathBut\"></i></button>"
 const clockInner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"clock\" onclick=\"clockF()\"><i class=\"fas fa-clock\" id=\"clockBut\"></i></button><button type=\"button\" id=\"path\" onclick=\"pathF()\"><i class=\"far fa-code-commit\" id=\"pathBut\"></i></button>"
-const pathInner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"clock\" onclick=\"clockF()\"><i class=\"far fa-clock\" id=\"clockBut\"></i></button><button type=\"button\" id=\"path\" onclick=\"pathF()\"><i class=\"fas fa-code-commit\" id=\"pathBut\"></i>"
+const pathInner = "<button type=\"button\" id=\"fav\" onclick=\"homeF()\"><i class=\"far fa-star\" id=\"favBut\"></i></button><button type=\"button\" id=\"clock\" onclick=\"clockF()\"><i class=\"far fa-clock\" id=\"clockBut\"></i></button><button type=\"button\" id=\"path\" onclick=\"pathF()\"><i class=\"fas fa-code-commit\" id=\"pathBut\"></i></button>"
 
 function homeF(){
     document.getElementById("bottom").innerHTML = favInner
