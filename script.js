@@ -169,6 +169,4 @@ function pathF() {
 
 getStopNames();
 getLineNames();
-getStopPoints("B").then(function(array){
-
-})
+//getStopPoints("B").then(function(array){})

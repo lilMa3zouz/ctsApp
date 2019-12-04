@@ -102,11 +102,34 @@ html{
     font-size: 52px;
     bottom:7.5%;
 }
-#other2Page{
+#pathPage{
     display: none;
     position:absolute;
     top: 7.5%;
     color: white;
     font-size: 52px;
     bottom:7.5%;
+}
+.test{
+    
+    display: block;
+    text-align: center;
+    border-bottom: 15px solid #5f27cd;
+}
+.fa-circle{
+    text-align: center;
+       
+}
+.pute{
+    bottom: -30px;
+    left:85px;
+    right: 100px;
+    font-size: 50px;
+    position: absolute;
+}
+.pute2{
+    font-size: 100px;
+    top: 20%;
+    width: 200px;
+    position: absolute;
 }
