@@ -1,5 +1,11 @@
 html{
   background-color: black;
+  margin:0;
+  padding:0;
+}
+body{
+  height: 100%;
+  width: 100%;
 }
 ::placeholder{
   color:white;
@@ -88,6 +94,7 @@ html{
 }
 #clockPage{
     display:none;
+    width: 100%;
     position:absolute;
     top: 7.5%;
     color: white;
@@ -111,13 +118,13 @@ html{
     bottom:7.5%;
 }
 .test{
-    
-    display: block;
-    text-align: center;
-    border-bottom: 15px solid #5f27cd;
+    margin-right: 30px;
+    border: none;
+    border-left: 15px solid #5f27cd;
 }
 .fa-circle{
-    text-align: center;
+    vertical-align: middle;
+
        
 }
 .pute{

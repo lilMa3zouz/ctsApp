@@ -167,6 +167,7 @@ function pathF() {
   document.getElementById("searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"lineNames\" type=\"text\" placeholder=\"recherche...\">"
 }
 
-getStopNames();
-getLineNames();
+clockF()
+//getStopNames();
+//getLineNames();
 //getStopPoints("B").then(function(array){})
