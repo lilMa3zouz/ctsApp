@@ -8,7 +8,8 @@
 
 </head>
 <body>
-    <div class="top">
+    <div id="jsp">
+        <span class="top">
             <span id="searchInput">
         <input class="searchText" id="searchText" list="stopnames" type="text" placeholder="recherche..."></span>
         <datalist id="stopnames">
@@ -20,18 +21,7 @@
                 <i class="fas fa-search"></i>
             </button>
         </div>
-    </div>
-
-    <div class="bottom" id="bottom">
-        <button type="button" id="fav" onclick="homeF()">
-            <i class="fas fa-star" id="favBut"></i>
-        </button>
-        <button type="button" id="clock" onclick="clockF()">
-            <i class="far fa-clock" id="clockBut"></i>
-        </button>
-        <button type="button" id="path" onclick="pathF()">
-            <i class="far fa-code-commit" id="pathBut"></i>
-        </button>
+        </span>
     </div>
 
     <div id="clockPage"></br></br>
@@ -51,6 +41,17 @@
     <div id="pathPage">
     </div>
 
+    <div class="bottom" id="bottom">
+        <button type="button" id="fav" onclick="homeF()">
+            <i class="fas fa-star" id="favBut"></i>
+        </button>
+        <button type="button" id="clock" onclick="clockF()">
+            <i class="far fa-clock" id="clockBut"></i>
+        </button>
+        <button type="button" id="path" onclick="pathF()">
+            <i class="far fa-code-commit" id="pathBut"></i>
+        </button>
+    </div>
 
 
 <script src="script.js"></script>
