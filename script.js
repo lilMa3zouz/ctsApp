@@ -148,26 +148,26 @@ const pathInner =
 
 function homeF() {
 	document.getElementById("bottom").innerHTML = favInner;
-	document.getElementById("favPage").style.display = "block";
-	document.getElementById("clockPage").style.display = "none";
-  document.getElementById("pathPage").style.display = "none";
-  document.getElementById("searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"stopnames\" type=\"text\" placeholder=\"recherche...\">"
+	$("#favPage").css("display", "block")
+	$("#clockPage").css("display", "none")
+	$("#pathPage").css("display", "none")
+	$("#searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"stopnames\" type=\"text\" placeholder=\"recherche...\">"
 }
 function clockF() {
 	document.getElementById("bottom").innerHTML = clockInner;
-	document.getElementById("favPage").style.display = "none";
-	document.getElementById("clockPage").style.display = "block";
-	document.getElementById("pathPage").style.display = "none";
+	$("#favPage").css("display", "none")
+	$("#clockPage").css("display", "block")
+	$("#pathPage").css("display", "none")
 }
 function pathF() {
 	document.getElementById("bottom").innerHTML = pathInner;
-	document.getElementById("favPage").style.display = "none";
-	document.getElementById("clockPage").style.display = "none";
-  document.getElementById("pathPage").style.display = "block";
+	$("#favPage").css("display", "none")
+	$("#clockPage").css("display", "none")
+    $("#pathPage").css("display", "block")
   document.getElementById("searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"lineNames\" type=\"text\" placeholder=\"recherche...\">"
 }
 
-clockF()
+pathF()
 //getStopNames();
 //getLineNames();
 //getStopPoints("B").then(function(array){})
