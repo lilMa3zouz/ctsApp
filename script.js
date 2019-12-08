@@ -96,15 +96,7 @@ function SetSchedules(json) {
 		minutesRemaining = String(Math.trunc(secondDif / 60)) + "'";
 		ExpectedArrivalTime =
 			ExpectedArrivalTime[0] + ":" + ExpectedArrivalTime[1];
-		list.push(
-			data.LineRef +
-				" - " +
-				data.DestinationName +
-				": " +
-				ExpectedArrivalTime +
-				" - " +
-				minutesRemaining
-		);
+		list.push(data.LineRef +" - " +data.DestinationName +": " +ExpectedArrivalTime +" - " +minutesRemaining);
 	});
 	return list;
 }
@@ -167,7 +159,7 @@ function pathF() {
   document.getElementById("searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"lineNames\" type=\"text\" placeholder=\"recherche...\">"
 }
 
-pathF()
+clockF()
 //getStopNames();
 //getLineNames();
 //getStopPoints("B").then(function(array){})
