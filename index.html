@@ -8,28 +8,40 @@
 
 </head>
 <body>
-    <div id="jsp">
-        <span class="top">
-            <span id="searchInput">
-        <input class="searchText" id="searchText" list="stopnames" type="text" placeholder="recherche..."></span>
-        <datalist id="stopnames">
-        </datalist>
-        <datalist id="lineNames">    
-        </datalist>
-        <div class="btn">
-            <button type="button" id="btn2">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-        </span>
+    <div class="veryTop">
+        header
     </div>
+    
+    <div id="jsp">
+            <span class="top">
+                <span id="searchInput">
+            <input class="searchText" id="searchText" list="stopnames" type="text" placeholder="recherche..."></span>
+            <datalist id="stopnames">
+            </datalist>
+            <datalist id="lineNames">    
+            </datalist>
+            <div class="btn">
+                <button type="button" id="btn2">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            </span>
+        </div>
 
     <div id="clockPage">
+            <div id=clockPageSearch>
+                    <input class="searchText" id="clockSearch" list="stopnames" type="text" placeholder="entrer une arrêt...">
+                    <datalist id="stopnames2">
+                        </datalist>
+            </div>
+
             <p id="timeChoose">
-                    <input class="heures" type="number" placeholder="13" maxlength="XXX">
+                    <input id="heures" class="numInput" type="number" placeholder="13" maxlength="XXX">
                     :
-                    <input class="minutes" type="number" placeholder="13" maxlength="XXX">
+                    <input id="minutes" class="numInput" type="number" placeholder="13" maxlength="XXX">
             </p>
+
+            <div id=clockSend><input type="button" id="clockSendBut" value="valider"></div>
 
     </div>
 

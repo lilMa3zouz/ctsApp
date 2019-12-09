@@ -46,11 +46,14 @@ let getStopNames = async function() {
 				stopnames.push(element.StopName);
 				nameCode[element.StopName] = element.Extension.LogicalStopCode;
 			});
-			datalist = document.getElementById("stopnames");
+			datalist1 = document.getElementById("stopnames");
+			datalist2 = document.getElementById("stopnames2");
 			stopnames = doubleCut(stopnames);
 			stopnames.forEach(function(element) {
-        datalist.innerHTML = datalist.innerHTML + '<option value="' +element +'"></option>';
-      });
+        datalist1.innerHTML = datalist1.innerHTML + '<option value="' +element +'"></option>';
+		datalist2.innerHTML = datalist2.innerHTML + '<option value="' +element +'"></option>';
+
+	});
 		});
 };
 
@@ -143,6 +146,8 @@ function homeF() {
 	$("#favPage").css("display", "block")
 	$("#clockPage").css("display", "none")
 	$("#pathPage").css("display", "none")
+	$(".top").css("display","block")
+	$(".veryTop").innerHTML = "home"
 	$("#searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"stopnames\" type=\"text\" placeholder=\"recherche...\">"
 }
 function clockF() {
@@ -150,15 +155,20 @@ function clockF() {
 	$("#favPage").css("display", "none")
 	$("#clockPage").css("display", "block")
 	$("#pathPage").css("display", "none")
+	$(".veryTop").innerHTML = "clock"
+	$(".top").css("display","none")
 }
 function pathF() {
 	document.getElementById("bottom").innerHTML = pathInner;
 	$("#favPage").css("display", "none")
 	$("#clockPage").css("display", "none")
-    $("#pathPage").css("display", "block")
+	$("#pathPage").css("display", "block")
+	$(".veryTop").innerHTML = "path"
+	$(".top").css("display","none")
   document.getElementById("searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"lineNames\" type=\"text\" placeholder=\"recherche...\">"
 }
 
+getStopNames()
 clockF()
 //getStopNames();
 //getLineNames();
