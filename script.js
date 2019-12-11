@@ -79,6 +79,7 @@ let fetchSchedules = async function(arg) {
 	return data;
 };
 
+
 function SetSchedules(json) {
 	var d = new Date();
 	let actualTime = new Date();
@@ -141,6 +142,15 @@ const clockInner =
 const pathInner =
 	'<button type="button" id="fav" onclick="homeF()"><i class="far fa-star" id="favBut"></i></button><button type="button" id="clock" onclick="clockF()"><i class="far fa-clock" id="clockBut"></i></button><button type="button" id="path" onclick="pathF()"><i class="fas fa-code-commit" id="pathBut"></i></button>';
 
+
+function keyboardFix(){
+	$(".bottom").css("position","absolute")
+	$(".bottom").css("bottom","-270px")
+}	
+function keyboardClean(){
+	$(".bottom").css("position","fixed")
+	$(".bottom").css("bottom","0")
+}
 function homeF() {
 	document.getElementById("bottom").innerHTML = favInner;
 	$("#favPage").css("display", "block")
@@ -152,6 +162,25 @@ function homeF() {
 }
 function clockF() {
 	document.getElementById("bottom").innerHTML = clockInner;
+	let int = window.setInterval(function(){
+		let heures = document.getElementById("heures")
+		let minutes = document.getElementById("minutes")
+		if(minutes.value!="" && Number(minutes.value)>59 || minutes.value!="" && Number(heures.value)==NaN){
+			minutes.value=""
+		}
+		if(heures.value!="" && Number(heures.value)>23 || heures.value!="" && Number(heures.value)==NaN){
+			heures.value=""
+		}
+		if(heures.value!="" && Number(heures.value)<24 && heures.value.split("").length == 2){
+			keyboardClean()
+			heures.blur()
+			minutes.focus()
+		}
+		if(minutes.value!="" && Number(minutes.value)<60 && minutes.value.split("").length == 2){
+			minutes.blur()
+			window.clearInterval(int)
+		}
+	},1000)
 	$("#favPage").css("display", "none")
 	$("#clockPage").css("display", "block")
 	$("#pathPage").css("display", "none")
@@ -167,9 +196,41 @@ function pathF() {
 	$(".top").css("display","none")
   document.getElementById("searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"lineNames\" type=\"text\" placeholder=\"recherche...\">"
 }
+function clockSend(){
+	let now = new Date();
+	let jour = now.getDate()
+	let mois = now.getMonth() + 1;
+	let année = now.getFullYear()
+	let heures = document.getElementById("heures").value
+	let minutes = document.getElementById("minutes").value
+	let arret = document.getElementById("clockSearch").value
+	arret= nameCode[arret]
+	let format = ""
+	format+=année +"-"
+	format+=mois +"-"
+	format+=jour +"T"
+	format+= heures+"%3A"+minutes+"%3A00%2B01%3A00"
+	let data = fetch(proxyurl + "https://api.cts-strasbourg.eu/v1/siri/2.0/stop-monitoring?MonitoringRef=" + arret +"&StartTime=" + format,cts)
+	.then(response=>response.json())
+	.then(json => json.ServiceDelivery.StopMonitoringDelivery[0].MonitoredStopVisit)
+	.then(function(array){
+		let list = []
+		let obj = {}
+		array.forEach(function(element){
+			let lineref = element.MonitoredVehicleJourney.LineRef
+			DestinationName = element.MonitoredVehicleJourney.DestinationName
+			let arrival = element.MonitoredVehicleJourney.MonitoredCall.ExpectedArrivalTime
+			obj = {
+				"LineRef" : lineref,
+				"DestinationName" : DestinationName,
+				"ExpectedArrivalTime" : arrival
+			}
+			list.push(obj)
+		})
+		console.log(list)
+	})
+	
+}
 
 getStopNames()
 clockF()
-//getStopNames();
-//getLineNames();
-//getStopPoints("B").then(function(array){})

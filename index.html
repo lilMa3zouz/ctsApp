@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.3.0/css/all.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.1/css/all.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/favPage.css">
+    <link rel="stylesheet" href="./css/clockPage.css">
+    <link rel="stylesheet" href="./css/pathPage.css">
+    <link rel="stylesheet" href="./css/bottom.css">
 
 </head>
 <body>
     <div class="veryTop">
-        header
+        <p id="headText">header</p>
     </div>
     
     <div id="jsp">
             <span class="top">
                 <span id="searchInput">
-            <input class="searchText" id="searchText" list="stopnames" type="text" placeholder="recherche..."></span>
+            <input class="searchText" id="searchText" list="stopnames" type="text" placeholder="recherche..." onfocus="keyboardFix()" onblur="keyboardClean()"></span>
             <datalist id="stopnames">
             </datalist>
             <datalist id="lineNames">    
@@ -30,18 +35,18 @@
 
     <div id="clockPage">
             <div id=clockPageSearch>
-                    <input class="searchText" id="clockSearch" list="stopnames" type="text" placeholder="entrer une arrêt...">
+                    <input class="searchText" id="clockSearch" list="stopnames" type="text" placeholder="entrer une arrêt..." onfocus="keyboardFix()" onblur="keyboardClean()">
                     <datalist id="stopnames2">
                         </datalist>
             </div>
 
             <p id="timeChoose">
-                    <input id="heures" class="numInput" type="number" placeholder="13" maxlength="XXX">
+                    <input id="heures" class="numInput" type="number" placeholder="13" maxlength="XXX" value="" onfocus="keyboardFix()" onblur="keyboardClean()">
                     :
-                    <input id="minutes" class="numInput" type="number" placeholder="13" maxlength="XXX">
+                    <input id="minutes" class="numInput" type="number" placeholder="13" maxlength="XXX" value="" onfocus="keyboardFix()" onblur="keyboardClean()">
             </p>
 
-            <div id=clockSend><input type="button" id="clockSendBut" value="valider"></div>
+            <div id=clockSend><input type="button" id="clockSendBut" value="valider" onclick="clockSend()"></div>
 
     </div>
 

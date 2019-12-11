@@ -1,0 +1,25 @@
+﻿#pathPage{
+    display: none;
+    position:absolute;
+    color: white;
+    top: 9%;
+    left: 5%;
+    width: 95%;
+    height: 400%;
+    z-index: 90;
+    font-size: 52px;
+}
+
+
+.test{
+    border: none;
+
+}
+.fa-circle{
+    vertical-align: middle;
+
+       
+}
+#black{
+  color: black;
+}
