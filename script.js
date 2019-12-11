@@ -37,7 +37,7 @@ let cts = {
 };
 
 let getStopNames = async function() {
-	let data = await fetch(proxyurl + url, cts)
+	let data = await fetch(proxyurl+url, cts)
 		.then(response => response.json())
 		.then(function(response) {
 			response.StopPointsDelivery.AnnotatedStopPointRef.forEach(function(
