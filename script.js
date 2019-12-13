@@ -35,16 +35,13 @@ let cts = {
 	headers: headers,
 	mode: "cors"
 };
-
 let getStopNames = async function() {
-	let data = await fetch(proxyurl+url, cts)
+	let data = fetch("LineNames.json")
 		.then(response => response.json())
 		.then(function(response) {
-			response.StopPointsDelivery.AnnotatedStopPointRef.forEach(function(
-				element
-			) {
-				stopnames.push(element.StopName);
-				nameCode[element.StopName] = element.Extension.LogicalStopCode;
+			Object.keys(response).forEach(function(element) {
+				stopnames.push(element);
+				nameCode[element] = response[element];
 			});
 			datalist1 = document.getElementById("stopnames");
 			datalist2 = document.getElementById("stopnames2");
@@ -58,18 +55,19 @@ let getStopNames = async function() {
 };
 
 let getLineNames = async function() {
-	let data = await fetch(proxyurl + "https://api.cts-strasbourg.eu/v1/siri/2.0/lines-discovery", cts)
+	let data = fetch("LineNames.json")
 		.then(response => response.json())
 		.then(function(response) {
-			response.LinesDelivery.AnnotatedLineRef.forEach(function(element) {
-				lineNames.push(element.LineName);
-				lineRefs[element.StopName] = element.LineRef;
+			Object.keys(response).forEach(function(element) {
+				lineNames.push(element);
+				lineRefs[element] = response[element];
 			});
-			datalist = document.getElementById("lineNames");
+			datalist1 = document.getElementById("lineNames");
 			lineNames = doubleCut(lineNames);
 			lineNames.forEach(function(element) {
-        datalist.innerHTML = datalist.innerHTML + '<option value="' +element +'"></option>';
-      });
+        datalist1.innerHTML = datalist1.innerHTML + '<option value="' +element +'"></option>';
+
+	});
 		});
 };
 
