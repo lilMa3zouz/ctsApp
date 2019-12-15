@@ -1,11 +1,12 @@
 ﻿#clockPage{
+    zoom: 1;
     display: none;
     position:absolute;
     color: white;
     top: 9%;
     left: 0%;
     width: 100%;
-    z-index: 10;
+    z-index: 90;
     font-size: 52px;
   }
   #clockPageSearch{
@@ -69,4 +70,52 @@
       border: none;
       color:white;
   } 
+  #searchResult{
+    display:block;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 50px;
+    width:90%;
+    z-index: 100;
+  }
+  #result{
+    display: none;
+    color: #5f27cd;
+    width: 100%;
+  }
+  #searchResultList{
+    display:block;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: -40px;
+    list-style:none;
+    z-index: 100;
+    padding-top: 10px; 
+  }
+  li{
+    margin-bottom: 40px;
+  }
+  .ligne1{
+    font-size:60px;
+    color:white;
+  }
+  .ligne2{
+    color:silver;
+    font-size:60px;
+    left: 0;
+  }
   
+  #noresult{
+    position: absolute;
+    display:block;
+    color: white;
+    font-size: 60px;
+    z-index: 90;
+    margin-left: 25%;
+  }
+  #searchResultButton{
+    text-align: left;
+    width: 90%;
+    border: none;
+    background-color: black;
+  }

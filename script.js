@@ -8,7 +8,7 @@ function doubleCut(list) {
 	});
 	return l;
 }
-
+let favoris=["174","175","410"]
 function addFav(arg) {
 	favoris.push(arg);
 	localStorage.setItem("favoris", favoris);
@@ -36,7 +36,7 @@ let cts = {
 	mode: "cors"
 };
 let getStopNames = async function() {
-	let data = fetch("LineNames.json")
+	let data = fetch("StopNames.json")
 		.then(response => response.json())
 		.then(function(response) {
 			Object.keys(response).forEach(function(element) {
@@ -49,7 +49,6 @@ let getStopNames = async function() {
 			stopnames.forEach(function(element) {
         datalist1.innerHTML = datalist1.innerHTML + '<option value="' +element +'"></option>';
 		datalist2.innerHTML = datalist2.innerHTML + '<option value="' +element +'"></option>';
-
 	});
 		});
 };
@@ -142,13 +141,86 @@ const pathInner =
 
 
 function keyboardFix(){
-	$(".bottom").css("position","absolute")
-	$(".bottom").css("bottom","-270px")
+	$(".bottom").css("display","none")
 }	
 function keyboardClean(){
-	$(".bottom").css("position","fixed")
-	$(".bottom").css("bottom","0")
+	$(".bottom").css("display","block")
 }
+
+function clockSearchFocus(){
+	keyboardFix()
+	$("#searchResultList").css("display","block")
+	$("#clockPageSearch").css("margin-top","10%")
+	$("#timeChoose").css("display","none")
+	$("#clockSend").css("display","none")
+	$("#timeChoose").css("z-index","80")
+	$("#clockSend").css("z-index","80")
+}
+function clockSearchBlur(){
+	keyboardClean()
+	$("#clockPageSearch").css("margin-top","20%")
+	$("#timeChoose").css("display","block")
+	$("#clockSend").css("display","block")
+	$("#timeChoose").css("z-index","80")
+	$("#clockSend").css("z-index","100")
+	$("#result").css("display","none")
+	$("#searchResultList").css("display","none")
+}
+function searchTextBlur(){
+	$("#result").css("display","none")
+	$("#searchResultList").css("display","none")
+}
+function clickntm(arg){
+	document.getElementById("clockSearch").value = arg
+	clockSearchBlur()
+}
+function searchResultButtonF(arg){
+	document.getElementById("searchText").value = arg
+	searchTextBlur()
+}
+document.getElementById("clockSearch").oninput = function(){
+	let l2 = ""
+	$("#result").css("display","block")
+    let text = document.getElementById("clockSearch").value
+    if(text!=""){
+		stopnames.forEach(function(element){
+        if(element.includes(text)){
+            l2+='<li><button id="searchResultButton" onclick="clickntm(&quot;'+element+'&quot);"><span class="ligne1">'+element+'</span></br><span class="ligne2">ligne2</span></button></li>'
+        }
+    })
+	}
+	else{l2=""}
+	if(l2!=""){
+		$("#noresult").css("display","none")
+	}
+	else{$("#noresult").css("display","block")}
+	document.getElementById("searchResultList").innerHTML = l2
+    
+};
+document.getElementById("searchText").oninput = function(){
+	let l2 = ""
+	$("#result").css("display","block")
+    let text = document.getElementById("searchText").value
+    if(text!=""){
+		stopnames.forEach(function(element){
+        if(element.includes(text)){
+            l2+='<li><button id="searchResultButton" onclick="searchResultButtonF(&quot;'+element+'&quot);"><span class="ligne1">'+element+'</span></br><span class="ligne2">ligne2</span></button></li>'
+        }
+    })
+	}
+
+    else{
+        l2=""
+	}
+	if(l2!=""){
+		$("#noresult").css("display","none")
+	}
+	else{$("#noresult").css("display","block")}
+	document.getElementById("searchResultList").innerHTML = l2
+    
+};
+
+
 function homeF() {
 	document.getElementById("bottom").innerHTML = favInner;
 	$("#favPage").css("display", "block")
@@ -221,7 +293,7 @@ function clockSend(){
 			obj = {
 				"LineRef" : lineref,
 				"DestinationName" : DestinationName,
-				"ExpectedArrivalTime" : arrival
+				"ExpectedArrivalTime" : String(arrival.split("T")).split("+")
 			}
 			list.push(obj)
 		})
@@ -229,6 +301,9 @@ function clockSend(){
 	})
 	
 }
-
+favoris.forEach(function(arret){
+	StopMonitor(arret).then(l =>console.log(l))
+})
 getStopNames()
-clockF()
+homeF()
+//onblur="clockSearchBlur()"

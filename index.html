@@ -20,7 +20,7 @@
     <div id="jsp">
             <span class="top">
                 <span id="searchInput">
-            <input class="searchText" id="searchText" list="stopnames" type="text" placeholder="recherche..." onfocus="keyboardFix()" onblur="keyboardClean()"></span>
+            <input class="searchText" id="searchText" type="text" placeholder="recherche..." onfocus="keyboardFix()"></span>
             <datalist id="stopnames">
             </datalist>
             <datalist id="lineNames">    
@@ -30,15 +30,28 @@
                     <i class="fas fa-search"></i>
                 </button>
             </div>
+            
             </span>
+        </div>
+    
+        <div id="searchResult">
+            <span id="result">résultat
+                <br>
+            <span id="noresult">aucun résultat</span>
+            </span>
+            <ul id="searchResultList">
+                
+              </ul>
         </div>
 
     <div id="clockPage">
             <div id=clockPageSearch>
-                    <input class="searchText" id="clockSearch" list="stopnames" type="text" placeholder="entrer une arrêt..." onfocus="keyboardFix()" onblur="keyboardClean()">
+                    <input class="searchText" id="clockSearch" type="text" placeholder="entrer une arrêt..." onfocus="clockSearchFocus()" >
                     <datalist id="stopnames2">
                         </datalist>
             </div>
+
+            
 
             <p id="timeChoose">
                     <input id="heures" class="numInput" type="number" placeholder="13" maxlength="XXX" value="" onfocus="keyboardFix()" onblur="keyboardClean()">

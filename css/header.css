@@ -1,5 +1,5 @@
 ﻿:root{
-    --vio : #5f27cd;
+    --vio : #0a0a0a;
   }
   html{
     background-color: black;
@@ -32,7 +32,7 @@
     width: 90%;
     border-radius: 180px;
     height: 7.5%;
-    background-color: #5f27cd;
+    background-color: #0a0a0a;
   }
   .veryTop{
     display: block;
@@ -42,14 +42,14 @@
     left:0;
     right: 0;
     font-size: 100px;
-    height:7.5%;
+    height:120px;
     color:white;
-    background-color: #5f27cd;
+    background-color: #0a0a0a;
     box-shadow: 0px 4px 12px var(--vio);
   }
   #headText{
     width:100%;
-    height: inherit;
+    height: 13%;
     position:fixed;
     text-align: center;
     top: 0;
