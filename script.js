@@ -77,7 +77,7 @@ let fetchSchedules = async function(arg) {
 };
 
 
-function SetSchedules(json) {
+let SetSchedules = async function(json) {
 	var d = new Date();
 	let actualTime = new Date();
 	let actualSecond =
@@ -109,7 +109,7 @@ let StopMonitor = async function(arg) {
 	return data;
 };
 
-function getStopPoints(LineRef) {
+let getStopPoints = async function (LineRef) {
   let l = []
 	data = fetch(proxyurl + "https://api.cts-strasbourg.eu/v1/siri/2.0/estimated-timetable?LineRef=" + LineRef, cts)
 		.then(response => response.json())
@@ -181,10 +181,13 @@ function searchResultButtonF(arg){
 	searchTextBlur()
 }
 let dictionnary = []
-fetch("StopLines.json").then(response=>response.json()).then(function(json){
+let getStopLines = async function(){
+	fetch("StopLines.json").then(response=>response.json()).then(function(json){
 	dictionnary.push(json)
 	dictionnary = dictionnary[0]
-})
+	})
+}
+getStopLines()
 
 document.getElementById("clockSearch").oninput = function(){
 	let l2 = ""
@@ -230,6 +233,7 @@ document.getElementById("searchText").oninput = function(){
 
 
 function homeF() {
+	$("#searchFavHeader").css("display", "block")
 	document.getElementById("bottom").innerHTML = favInner;
 	$("#favPage").css("display", "block")
 	$("#clockPage").css("display", "none")
@@ -262,6 +266,7 @@ function clockF() {
 			window.clearInterval(int)
 		}
 	},1000)
+	$("#searchFavHeader").css("display", "none")
 	$("#favPage").css("display", "none")
 	$("#clockPage").css("display", "block")
 	$("#pathPage").css("display", "none")
@@ -274,6 +279,7 @@ function clockF() {
 function pathF() {
 	document.getElementById("bottom").innerHTML = pathInner;
 	$("#favPage").css("display", "none")
+	$("#searchFavHeader").css("display", "block")
 	$("#clockPage").css("display", "none")
 	$("#pathPage").css("display", "block")
 	$(".veryTop").innerHTML = "path"
@@ -318,9 +324,7 @@ function clockSend(){
 	})
 	
 }
-favoris.forEach(function(arret){
-	StopMonitor(arret).then(l =>console.log(l))
-})
+
 getStopNames()
 homeF()
 //onblur="clockSearchBlur()"

@@ -16,7 +16,7 @@
     color:white;
   }
   
-  #jsp{
+  #header{
     display:none;
     position: fixed;
     top: 20;
@@ -86,6 +86,29 @@
     color:white;
     font-size: 72px;
   }
-  
+  #dots{
+    position: absolute;
+    border: none;
+    background-color: inherit;
+    top: 20px;
+    bottom: 10px;
+    right: 10px;
+  }
+  .fa-ellipsis-v{
+    color: white;
+    background-color: inherit;
+    font-size: 100px;
+  }
+  #searchFavHeader{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    top: 20px;
+    bottom: 10px;
+    right: 100px;
+  }
+  #searchFavHeaderBut{
+    font-size: 100px;
+  }
   
 
