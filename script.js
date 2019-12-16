@@ -142,8 +142,10 @@ const pathInner =
 
 function keyboardFix(){
 	$(".bottom").css("display","none")
+	$("#jsp").css("height", "14%")
 }	
 function keyboardClean(){
+	$("#jsp").css("height", "7%")
 	$(".bottom").css("display","block")
 }
 
@@ -178,6 +180,12 @@ function searchResultButtonF(arg){
 	document.getElementById("searchText").value = arg
 	searchTextBlur()
 }
+let dictionnary = []
+fetch("StopLines.json").then(response=>response.json()).then(function(json){
+	dictionnary.push(json)
+	dictionnary = dictionnary[0]
+})
+
 document.getElementById("clockSearch").oninput = function(){
 	let l2 = ""
 	$("#result").css("display","block")
@@ -185,7 +193,7 @@ document.getElementById("clockSearch").oninput = function(){
     if(text!=""){
 		stopnames.forEach(function(element){
         if(element.includes(text)){
-            l2+='<li><button id="searchResultButton" onclick="clickntm(&quot;'+element+'&quot);"><span class="ligne1">'+element+'</span></br><span class="ligne2">ligne2</span></button></li>'
+            l2+='<li><button id="searchResultButton" onclick="clickntm(&quot;'+element+'&quot);"><span class="ligne1">'+element+'</span></br><span class="ligne2">'+String(dictionnary[element])+'</span></button></li>'
         }
     })
 	}
@@ -228,6 +236,9 @@ function homeF() {
 	$("#pathPage").css("display", "none")
 	$(".top").css("display","block")
 	$(".veryTop").innerHTML = "home"
+	$(".fa-star").css("font-size", "115px")
+	$(".fa-clock").css("font-size", "95px")
+	$(".fa-code-commit").css("font-size", "95px")
 	$("#searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"stopnames\" type=\"text\" placeholder=\"recherche...\">"
 }
 function clockF() {
@@ -256,6 +267,9 @@ function clockF() {
 	$("#pathPage").css("display", "none")
 	$(".veryTop").innerHTML = "clock"
 	$(".top").css("display","none")
+	$(".fa-star").css("font-size", "95px")
+	$(".fa-clock").css("font-size", "115px")
+	$(".fa-code-commit").css("font-size", "95px")
 }
 function pathF() {
 	document.getElementById("bottom").innerHTML = pathInner;
@@ -264,6 +278,9 @@ function pathF() {
 	$("#pathPage").css("display", "block")
 	$(".veryTop").innerHTML = "path"
 	$(".top").css("display","none")
+	$(".fa-star").css("font-size", "95px")
+	$(".fa-clock").css("font-size", "95px")
+	$(".fa-code-commit").css("font-size", "140px")
   document.getElementById("searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"lineNames\" type=\"text\" placeholder=\"recherche...\">"
 }
 function clockSend(){

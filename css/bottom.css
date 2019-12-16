@@ -5,7 +5,9 @@
     width: 100%;
     height: 9.5%;
     z-index: 100;
-    background-color: #0a0a0a;
+    background-color: #23232f;
+    border: none;
+    border-top: 1px solid white;
   
   }
   #fav{
@@ -15,6 +17,7 @@
       background-color: inherit;
       border:none;
       height:100%;
+      top: 5px;
   }
   #path{
       position: absolute;
@@ -23,6 +26,7 @@
       background-color: inherit;
       border:none;
       height:100%;
+      top: 5px;
   }
   #clock{
       position: absolute;
@@ -30,18 +34,19 @@
       left:44%;
       background-color: inherit;
       border:none;
-      height:100%;
+      height: 100%;
+      top: 5px;
   }
   
   .fa-star{
-      color:white;
-      font-size:95px;
+      color:#69f0ae;
+      font-size:115px;
   }
   .fa-clock{
-      color:white;
+      color:#69f0ae;
       font-size:95px;
   }
   .fa-code-commit{
-      color:white;
-      font-size:95px;
+      color:#69f0ae;
+      font-size:30px;
   }
