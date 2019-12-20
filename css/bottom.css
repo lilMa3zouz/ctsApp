@@ -1,4 +1,7 @@
 ﻿.bottom{
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -17,12 +20,12 @@
       background-color: inherit;
       border:none;
       height:100%;
-      top: 5px;
+      top: 3px;
   }
   #path{
       position: absolute;
       z-index: 90;
-      right:20%;
+      right:18.5%;
       background-color: inherit;
       border:none;
       height:100%;
@@ -31,22 +34,22 @@
   #clock{
       position: absolute;
       z-index: 90;
-      left:44%;
+      left:43%;
+      height:100%;
       background-color: inherit;
       border:none;
-      height: 100%;
       top: 5px;
   }
   
   .fa-star{
       color:#69f0ae;
-      font-size:115px;
+      font-size:37px;
   }
   .fa-clock{
       color:#69f0ae;
-      font-size:95px;
+      font-size:37px;
   }
   .fa-code-commit{
       color:#69f0ae;
-      font-size:30px;
+      font-size:37px;
   }

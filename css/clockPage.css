@@ -7,9 +7,10 @@
     left: 0%;
     width: 100%;
     z-index: 90;
-    font-size: 52px;
+    font-size: 50px;
   }
   #clockPageSearch{
+    font-size: 50px;
     display: block;
     position: fixed;
     margin-left: 5%;
@@ -45,12 +46,12 @@
       color: white;
       text-align: center;
       vertical-align: middle;
-      font-size: 150px;
-      height: 300px;
-      width: 300px;
+      font-size: 70px;
+      height: 100px;
+      width: 120px;
       background-color: inherit;
       border:none;
-      border-bottom: 15px solid #69f0ae;
+      border-bottom: 6px solid #69f0ae;
   }
   .numInput::placeholder{
       color: grey;

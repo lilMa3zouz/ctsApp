@@ -240,9 +240,9 @@ function homeF() {
 	$("#pathPage").css("display", "none")
 	$(".top").css("display","block")
 	$(".veryTop").innerHTML = "home"
-	$(".fa-star").css("font-size", "115px")
-	$(".fa-clock").css("font-size", "95px")
-	$(".fa-code-commit").css("font-size", "95px")
+	$(".fa-star").css("font-size", "37px")
+	$(".fa-clock").css("font-size", "37px")
+	$(".fa-code-commit").css("font-size", "37px")
 	$("#searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"stopnames\" type=\"text\" placeholder=\"recherche...\">"
 }
 function clockF() {
@@ -272,9 +272,9 @@ function clockF() {
 	$("#pathPage").css("display", "none")
 	$(".veryTop").innerHTML = "clock"
 	$(".top").css("display","none")
-	$(".fa-star").css("font-size", "95px")
-	$(".fa-clock").css("font-size", "115px")
-	$(".fa-code-commit").css("font-size", "95px")
+	$(".fa-star").css("font-size", "37px")
+	$(".fa-clock").css("font-size", "37px")
+	$(".fa-code-commit").css("font-size", "37px")
 }
 function pathF() {
 	document.getElementById("bottom").innerHTML = pathInner;
@@ -284,9 +284,9 @@ function pathF() {
 	$("#pathPage").css("display", "block")
 	$(".veryTop").innerHTML = "path"
 	$(".top").css("display","none")
-	$(".fa-star").css("font-size", "95px")
-	$(".fa-clock").css("font-size", "95px")
-	$(".fa-code-commit").css("font-size", "140px")
+	$(".fa-star").css("font-size", "37px")
+	$(".fa-clock").css("font-size", "37px")
+	$(".fa-code-commit").css("font-size", "37px")
   document.getElementById("searchInput").innerHTML = "<input class=\"searchText\" id=\"searchText\" list=\"lineNames\" type=\"text\" placeholder=\"recherche...\">"
 }
 function clockSend(){
