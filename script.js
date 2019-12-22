@@ -326,5 +326,5 @@ function clockSend(){
 }
 
 getStopNames()
-homeF()
+clockF()
 //onblur="clockSearchBlur()"

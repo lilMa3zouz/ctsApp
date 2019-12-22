@@ -9,15 +9,27 @@
     z-index: 90;
     font-size: 50px;
   }
+  .searchText{
+    color: white;
+    margin-top: 1%;
+    margin-left: 5%;
+    width: 80%;
+    height:70%;
+    border:none;
+    border: 3px solid silver
+    border-bottom: 5px solid white;
+    background-color: inherit;
+    vertical-align: middle;
+  }
   #clockPageSearch{
-    font-size: 50px;
+    font-size: 30px;
     display: block;
     position: fixed;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 20%;
+    margin-top: 15%;
     width: 90%;
-    height: 140px;
+    height: 20px;
     background-color: #23232f;
     text-align: center;
   }
@@ -46,7 +58,7 @@
       color: white;
       text-align: center;
       vertical-align: middle;
-      font-size: 70px;
+      font-size: 80px;
       height: 100px;
       width: 120px;
       background-color: inherit;
@@ -64,8 +76,8 @@
   }
   #clockSendBut{
       width: 80%;
-      height: 120px;
-      font-size: 80px;
+      height: 50px;
+      font-size: 40px;
       border-radius: 180px;
       background-color: #69f0ae;
       border: none;

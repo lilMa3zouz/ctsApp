@@ -60,17 +60,7 @@
     margin-top: 0;
     left: 0;
   }
-  .searchText{
-    color: white;
-    margin-top: 1%;
-    margin-left: 5%;
-    width: 80%;
-    height:80%;
-    border:none;
-    border-bottom: 5px solid white;
-    background-color: inherit;
-    vertical-align: middle;
-  }
+ 
   .btn{
       position: absolute;
       top:25%;
